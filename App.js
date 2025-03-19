@@ -1,4 +1,5 @@
 import Login from './screens/login';
+import 'react-native-gesture-handler';
 import Test from './screens/home';
 import { View, StyleSheet } from 'react-native';
 
