@@ -1,6 +1,7 @@
 import {ImageBackground,Text, View, StyleSheet, Image, TextInput, Button} from 'react-native';
+import Test from './home';
 
-export default function Login() {
+export default function Login({navigation}) {
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -24,6 +25,7 @@ export default function Login() {
                     <Button 
                     title="Enviar"
                     color="#003366" 
+                    onPress={() => navigation.navigate('Home')}
                     />
                 </View>
         </ImageBackground>
