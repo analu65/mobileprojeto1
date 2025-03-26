@@ -1,5 +1,6 @@
 import {ImageBackground,Text, View, StyleSheet, Image, TextInput, Button} from 'react-native';
 import Test from './home';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 export default function Login({navigation}) {
     return (
@@ -9,6 +10,7 @@ export default function Login({navigation}) {
                 <Text style={styles.textologin}>
                     Login
                 </Text>
+                <MaterialCommunityIcons name="login" size={24} color="#003366" />
                 <Text style={styles.textocinza}>
                 Faça o seu login ou crie uma conta caso ainda não possua cadastro
                 </Text>
@@ -44,6 +46,7 @@ const styles = StyleSheet.create({
         color:'#4e4e4e',
         fontSize:17,
         marginHorizontal: 15,
+        marginTop: 15
     },
     textologin:{
         fontSize: 30,       
