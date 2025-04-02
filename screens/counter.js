@@ -1,5 +1,6 @@
 import {View, Text, Image, Button, StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
 import { useState } from 'react';
+import { TextInput } from 'react-native-gesture-handler';
 
 
 export default function Counter() {
@@ -34,6 +35,17 @@ export default function Counter() {
             <Text style={styles.txtbotao}>-</Text>
             </TouchableOpacity>
             </View>
+            <View style={styles.viewinput}>
+            <TextInput
+            placeholder='Nome'
+            placeholderTextColor='white'
+            style={styles.input}
+            />
+            <TextInput
+            placeholder='email'
+            placeholderTextColor='white'
+            style={styles.input}/>
+            </View>
         </View>
 
     )
@@ -58,7 +70,7 @@ const styles = StyleSheet.create({
 
     },
     botao: {
-        width:'10%',
+        width:'20%',
         borderRadius:'5%',
         backgroundColor: '#003366'
     },
@@ -69,6 +81,13 @@ const styles = StyleSheet.create({
     textocinza:{
         color:'#646464',
         textAlign: 'center'
+    },
+    viewinput:{
+        backgroundColor:'#003366',
+        height:'8%'
+    },
+    input:{
+        justifyContent:'space-around'
     }
 
 });
