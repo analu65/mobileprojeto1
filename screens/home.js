@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     imagensrow1: {
         flexDirection:'row',
         justifyContent: 'space-around',
-        marginBottom: 25,
+        marginBottom: 30,
 
     },
     pngcontainer: {
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     
-        justifyContent: 'center',
+        justifyContent:'space-evenly',
         alignItems: 'center',
       },
 

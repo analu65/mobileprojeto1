@@ -27,7 +27,7 @@ export default function Login({navigation}) {
                     <Button 
                     title="Enviar"
                     color="#003366" 
-                    onPress={() => navigation.navigate('Home')}
+                    onPress={() => navigation.navigate('HomeTab')}
                     />
                 </View>
         </ImageBackground>
@@ -39,7 +39,7 @@ export default function Login({navigation}) {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     textocinza:{
         textAlign:'center',
