@@ -5,6 +5,7 @@ import { TextInput } from 'react-native-gesture-handler';
 
 export default function Counter() {
     const [contador, setContador] = useState(0)
+    const [nome, setNome] = useState('');
     if(contador<0){
         setContador(0);
     }
@@ -40,6 +41,8 @@ export default function Counter() {
             placeholder='Nome'
             placeholderTextColor='white'
             style={styles.input}
+            value={nome}
+            onChangeText={setNome}
             />
             <TextInput
             placeholder='email'
@@ -84,7 +87,7 @@ const styles = StyleSheet.create({
     },
     viewinput:{
         backgroundColor:'#003366',
-        height:'8%'
+        height:'7%'
     },
     input:{
         justifyContent:'space-around'
