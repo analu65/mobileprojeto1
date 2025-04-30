@@ -10,11 +10,13 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { createStackNavigator } from '@react-navigation/stack';
 import Product from './screens/Product';
 import Produto from './screens/Product';
+import Cadastro from './screens/cadastro';
 
 function BottomTabs(){
   const BottomTab = createBottomTabNavigator();
   return(
   <BottomTab.Navigator screenOptions={{
+    animation: 'shift',
     tabBarActiveTintColor: '#003366',
     tabBarInactiveTintColor:'#003366',
     tabBarInactiveBackgroundColor: '#ffffff',
@@ -41,7 +43,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name='Login' component={Login}></Stack.Screen>
+      <Stack.Screen name='Login' component={Login}></Stack.Screen>
+        <Stack.Screen name='Cadastro' component={Cadastro}></Stack.Screen>
         <Stack.Screen options={{headerShown:false}} name='HomeTab' component={BottomTabs}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>

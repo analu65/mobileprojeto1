@@ -1,8 +1,25 @@
 import {ImageBackground,Text, View, StyleSheet, Image, TextInput, Button} from 'react-native';
 import Test from './home';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../controller';
+import { useState } from 'react';
 
 export default function Login({navigation}) {
+    const [email,setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+
+    const verificaUser = () => {
+        signInWithEmailAndPassword(auth, email, senha)
+        .then((userCredential) => {
+            console.log('Usuário logado', userCredential.user.email);
+            navigation.navigate('HomeTab')
+          })
+          .catch((error) => {
+            console.log('Erro ao logar',error.message);
+          });
+        
+    }
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -17,17 +34,27 @@ export default function Login({navigation}) {
                 <TextInput
                 style={styles.input}
                 placeholder="Digite seu email"
-                keyboardType="default" >
+                keyboardType="default"
+                value={email}
+                onChangeText={setEmail} >
                 </TextInput>
                 <TextInput style={styles.input}
                 placeholder="Digite sua senha"
-                keyboardType="default" >
+                keyboardType="default"
+                value={senha}
+                onChangeText={setSenha} >
                 </TextInput>
                 <View style={styles.buttoncontainer}>
                     <Button 
                     title="Enviar"
                     color="#003366" 
-                    onPress={() => navigation.navigate('HomeTab')}
+                    onPress={verificaUser}
+                    
+                    />
+                    <Button 
+                    title="Cadastrar"
+                    color="#003366" 
+                    onPress={() => navigation.navigate('Cadastro')}
                     />
                 </View>
         </ImageBackground>
@@ -39,7 +66,7 @@ export default function Login({navigation}) {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        justifyContent: 'center',
+        justifyContent: 'space-around',
     },
     textocinza:{
         textAlign:'center',
@@ -68,7 +95,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     buttoncontainer:{
-        marginTop:30
+        marginTop:30,
     },
     imagebackground: {
         flex: 1, 
