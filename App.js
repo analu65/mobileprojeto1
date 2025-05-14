@@ -11,6 +11,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Product from './screens/Product';
 import Produto from './screens/Product';
 import Cadastro from './screens/cadastro';
+import CadastroProduto from './screens/cadastroprod';
 
 function BottomTabs(){
   const BottomTab = createBottomTabNavigator();
@@ -33,6 +34,7 @@ function BottomTabs(){
     <BottomTab.Screen name='Feed' component={Feed} options={{tabBarIcon: () => (<MaterialCommunityIcons name="tooth-outline" size={22} color="#003366" />)}}></BottomTab.Screen>
     <BottomTab.Screen name='Contador' component={Counter} options={{tabBarIcon: () => (<MaterialCommunityIcons name="counter" size={22} color="#003366" />)}}></BottomTab.Screen>
     <BottomTab.Screen name='Produtos' component={Produto} options={{tabBarIcon: () => (<MaterialCommunityIcons name="cart-variant" size={24} color="#003366" />)}}></BottomTab.Screen>
+    <BottomTab.Screen name='Cadastro de Produto' component={CadastroProduto} options={{tabBarIcon: () => (<MaterialCommunityIcons name="card-account-details-outline" size={22} color="#003366" />)}}></BottomTab.Screen>
   </BottomTab.Navigator>
   )
 }

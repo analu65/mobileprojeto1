@@ -22,7 +22,7 @@ export default function Counter() {
     return (
         <View style={styles.container}>
             <View style={styles.titulo}>
-                CONTADOR
+                Contador
             </View>
             <View style={styles.textocinza}>
             contador: {contador}
