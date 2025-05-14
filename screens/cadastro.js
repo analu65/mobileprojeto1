@@ -23,19 +23,18 @@ export default function Cadastro({navigation}){
             <View style = {styles.texto}>
                 CADASTRO
             </View>
-            <TextInput STYLE = {styles.input}
+            <TextInput style = {styles.input}
             placeholder="Email"
             value={email}
             onChangeText={setEmail}>
             </TextInput>
-            <TextInput STYLE = {styles.input}
+            <TextInput style = {styles.input}
             placeholder="Senha"
             value={senha}
             onChangeText={setSenha}>
 
             </TextInput>
             <Button color={'#003366'} title="Cadastrar" onPress={cadastroUser}></Button>
-            <Button color={'#003366'} title="Login" onPress={() => navigation.navigate('Login')}></Button>
         </View>
 
     )
@@ -55,7 +54,15 @@ const styles = StyleSheet.create({
         marginBottom: 15, 
         letterSpacing: 1.0, 
     },
-    input:{
-        
-    }
+    input: {
+        width: '80%', 
+        height: 50, 
+        borderColor: '#ccc', 
+        borderWidth: 1, 
+        borderRadius: 5,
+        paddingLeft: 20, 
+        marginHorizontal: 37,
+        marginTop:30,
+        fontSize: 16,
+    },
 })

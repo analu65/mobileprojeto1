@@ -1,4 +1,4 @@
-import {ImageBackground,Text, View, StyleSheet, Image, TextInput, Button} from 'react-native';
+import {ImageBackground,Text, View, StyleSheet, Image, TextInput, Button, TouchableOpacity} from 'react-native';
 import Test from './home';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { signInWithEmailAndPassword } from 'firebase/auth';
@@ -51,11 +51,11 @@ export default function Login({navigation}) {
                     onPress={verificaUser}
                     
                     />
-                    <Button 
-                    title="Cadastrar"
-                    color="#003366" 
-                    onPress={() => navigation.navigate('Cadastro')}
-                    />
+                    <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
+                    <Text style={styles.txtcadastrar}>
+                    Cadastre-se
+                    </Text>
+                    </TouchableOpacity>
                 </View>
         </ImageBackground>
       </View>  
@@ -101,5 +101,10 @@ const styles = StyleSheet.create({
         flex: 1, 
         justifyContent: 'center', 
         alignItems: 'center',
+    },
+    txtcadastrar: {
+        fontSize: 20,
+        color: '#003366'
+
     }
 });
